@@ -467,7 +467,7 @@
             // NVclient
             // 
             this.NVclient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NVclient.Location = new System.Drawing.Point(12, 12);
+            this.NVclient.Location = new System.Drawing.Point(12, 25);
             this.NVclient.Name = "NVclient";
             this.NVclient.Size = new System.Drawing.Size(226, 55);
             this.NVclient.TabIndex = 88;
