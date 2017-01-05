@@ -43,6 +43,7 @@ namespace Car_Rental_System
             fill_BOOKINGSTATUS_Combo();
             fill_DISCOUT_Combo();
             fill_MODELVOIT_Combo();
+            fill_ENRG_Combo();
         }
         public void fillClientCombo()
         {
@@ -129,7 +130,23 @@ namespace Car_Rental_System
 
             }
         }
+        public void fill_ENRG_Combo()
+        {
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            newConnection.Open();
+            SqlCommand scm = new SqlCommand();
+            scm.Connection = newConnection;
+            scm.CommandText = "select distinct BOOKING_ID from BOOKING_DETAILS WHERE ACT_RET_DT_TIME IS NULL";
+            SqlDataAdapter clientid = new SqlDataAdapter(scm);
+            DataTable DT = new DataTable("BOOKING_ID");
+            clientid.Fill(DT);
 
+            for (int i = 0; i <= DT.Rows.Count - 1; i++)
+            {
+                ComboENRG.Items.Add(DT.Rows[i]["BOOKING_ID"].ToString());
+
+            }
+        }
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
 
@@ -230,7 +247,7 @@ namespace Car_Rental_System
             MyRow["BOOKING_ID"] = bOOKING_IDTextBox.Text;
             MyRow["FROM_DT_TIME"] = fROM_DT_TIMEDateTimePicker.Text;
             MyRow["RET_DT_TIME"] = rET_DT_TIMEDateTimePicker.Text;
-            MyRow["AMOUNT"] = Decimal.Parse(aMOUNTTextBox.Text);
+            //MyRow["AMOUNT"] = Decimal.Parse(aMOUNTTextBox.Text);
             MyRow["BOOKING_STATUS"] = bookStatusCombo.Text;
             MyRow["PICKUP_LOC"] = locationComboup.Text;
             MyRow["DROP_LOC"] = locationCombodrop.Text;
@@ -318,6 +335,46 @@ namespace Car_Rental_System
         }
 
         private void dL_NUMTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dL_NUMLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNS_CODELabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DISCOUNT_DETAILScombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNS_CODETextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aCT_RET_DT_TIMELabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aCT_RET_DT_TIMEDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dISCOUNT_CODELabel_Click(object sender, EventArgs e)
         {
 
         }
