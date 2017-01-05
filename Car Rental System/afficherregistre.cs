@@ -28,7 +28,9 @@ namespace Car_Rental_System
         private void afficherregistre_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cAR_RENTALDataSet.BOOKING_DETAILS' table. You can move, or remove it, as needed.
+            this.bOOKING_DETAILSDataGridView.AutoGenerateColumns = true;
             this.bOOKING_DETAILSTableAdapter.Fill(this.cAR_RENTALDataSet.BOOKING_DETAILS);
+            this.bOOKING_DETAILSDataGridView.DataSource = bOOKING_DETAILSTableAdapter;
 
         }
     }

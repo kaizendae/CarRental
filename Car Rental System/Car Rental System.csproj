@@ -111,6 +111,7 @@
     <Compile Include="Car Rental.Designer.cs">
       <DependentUpon>Car Rental.cs</DependentUpon>
     </Compile>
+    <Compile Include="DATA.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="afficherBOOK.resx">
