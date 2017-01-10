@@ -32,16 +32,17 @@
             System.Windows.Forms.Label bOOKING_IDLabel;
             System.Windows.Forms.Label fROM_DT_TIMELabel;
             System.Windows.Forms.Label rET_DT_TIMELabel;
-            System.Windows.Forms.Label bOOKING_STATUSLabel;
             System.Windows.Forms.Label pICKUP_LOCLabel;
             System.Windows.Forms.Label dROP_LOCLabel;
             System.Windows.Forms.Label rEG_NUMLabel;
             System.Windows.Forms.Label dL_NUMLabel;
             System.Windows.Forms.Label iNS_CODELabel;
             System.Windows.Forms.Label dISCOUNT_CODELabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label aCT_RET_DT_TIMELabel;
             System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label label6;
             this.cAR_RENTALDataSet = new Car_Rental_System.CAR_RENTALDataSet();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientTableAdapter = new Car_Rental_System.CAR_RENTALDataSetTableAdapters.ClientTableAdapter();
@@ -55,12 +56,10 @@
             this.tableAdapterManager1 = new Car_Rental_System.CAR_RENTALDataSetTableAdapters.TableAdapterManager();
             this.clientTableAdapter1 = new Car_Rental_System.CAR_RENTALDataSetTableAdapters.ClientTableAdapter();
             this.btnQUIT = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.bOOKING_DETAILSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bOOKING_IDTextBox = new System.Windows.Forms.TextBox();
             this.fROM_DT_TIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.rET_DT_TIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.iNS_CODETextBox = new System.Windows.Forms.TextBox();
             this.bILLING_DETAILSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.showFact = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,18 +80,22 @@
             this.clientCombo = new System.Windows.Forms.ComboBox();
             this.locationComboup = new System.Windows.Forms.ComboBox();
             this.locationCombodrop = new System.Windows.Forms.ComboBox();
-            this.bookStatusCombo = new System.Windows.Forms.ComboBox();
             this.DISCOUNT_DETAILScombo = new System.Windows.Forms.ComboBox();
             this.Modelcombo = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Registre = new System.Windows.Forms.TabPage();
+            this.comboINS = new System.Windows.Forms.ComboBox();
+            this.aMOUNTTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.aCT_RET_DT_TIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ComboENRG = new System.Windows.Forms.ComboBox();
+            this.aCT_RET_DT_TIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ComboIDAnnuler = new System.Windows.Forms.ComboBox();
+            this.Completer = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             bOOKING_IDLabel = new System.Windows.Forms.Label();
             fROM_DT_TIMELabel = new System.Windows.Forms.Label();
             rET_DT_TIMELabel = new System.Windows.Forms.Label();
-            bOOKING_STATUSLabel = new System.Windows.Forms.Label();
             pICKUP_LOCLabel = new System.Windows.Forms.Label();
             dROP_LOCLabel = new System.Windows.Forms.Label();
             rEG_NUMLabel = new System.Windows.Forms.Label();
@@ -101,6 +104,8 @@
             dISCOUNT_CODELabel = new System.Windows.Forms.Label();
             aCT_RET_DT_TIMELabel = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cAR_RENTALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caR_RENTALDataSet1)).BeginInit();
@@ -111,6 +116,7 @@
             this.tabControl1.SuspendLayout();
             this.Registre.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bOOKING_IDLabel
@@ -140,19 +146,10 @@
             rET_DT_TIMELabel.TabIndex = 47;
             rET_DT_TIMELabel.Text = "Date retoure planifié :";
             // 
-            // bOOKING_STATUSLabel
-            // 
-            bOOKING_STATUSLabel.AutoSize = true;
-            bOOKING_STATUSLabel.Location = new System.Drawing.Point(6, 115);
-            bOOKING_STATUSLabel.Name = "bOOKING_STATUSLabel";
-            bOOKING_STATUSLabel.Size = new System.Drawing.Size(42, 18);
-            bOOKING_STATUSLabel.TabIndex = 51;
-            bOOKING_STATUSLabel.Text = "Etat :";
-            // 
             // pICKUP_LOCLabel
             // 
             pICKUP_LOCLabel.AutoSize = true;
-            pICKUP_LOCLabel.Location = new System.Drawing.Point(6, 142);
+            pICKUP_LOCLabel.Location = new System.Drawing.Point(6, 113);
             pICKUP_LOCLabel.Name = "pICKUP_LOCLabel";
             pICKUP_LOCLabel.Size = new System.Drawing.Size(102, 18);
             pICKUP_LOCLabel.TabIndex = 53;
@@ -161,7 +158,7 @@
             // dROP_LOCLabel
             // 
             dROP_LOCLabel.AutoSize = true;
-            dROP_LOCLabel.Location = new System.Drawing.Point(6, 170);
+            dROP_LOCLabel.Location = new System.Drawing.Point(6, 141);
             dROP_LOCLabel.Name = "dROP_LOCLabel";
             dROP_LOCLabel.Size = new System.Drawing.Size(91, 18);
             dROP_LOCLabel.TabIndex = 55;
@@ -170,7 +167,7 @@
             // rEG_NUMLabel
             // 
             rEG_NUMLabel.AutoSize = true;
-            rEG_NUMLabel.Location = new System.Drawing.Point(6, 200);
+            rEG_NUMLabel.Location = new System.Drawing.Point(6, 171);
             rEG_NUMLabel.Name = "rEG_NUMLabel";
             rEG_NUMLabel.Size = new System.Drawing.Size(99, 18);
             rEG_NUMLabel.TabIndex = 57;
@@ -179,7 +176,7 @@
             // dL_NUMLabel
             // 
             dL_NUMLabel.AutoSize = true;
-            dL_NUMLabel.Location = new System.Drawing.Point(6, 230);
+            dL_NUMLabel.Location = new System.Drawing.Point(6, 201);
             dL_NUMLabel.Name = "dL_NUMLabel";
             dL_NUMLabel.Size = new System.Drawing.Size(68, 18);
             dL_NUMLabel.TabIndex = 59;
@@ -189,7 +186,7 @@
             // iNS_CODELabel
             // 
             iNS_CODELabel.AutoSize = true;
-            iNS_CODELabel.Location = new System.Drawing.Point(6, 261);
+            iNS_CODELabel.Location = new System.Drawing.Point(6, 232);
             iNS_CODELabel.Name = "iNS_CODELabel";
             iNS_CODELabel.Size = new System.Drawing.Size(128, 18);
             iNS_CODELabel.TabIndex = 61;
@@ -199,12 +196,39 @@
             // dISCOUNT_CODELabel
             // 
             dISCOUNT_CODELabel.AutoSize = true;
-            dISCOUNT_CODELabel.Location = new System.Drawing.Point(6, 294);
+            dISCOUNT_CODELabel.Location = new System.Drawing.Point(6, 265);
             dISCOUNT_CODELabel.Name = "dISCOUNT_CODELabel";
             dISCOUNT_CODELabel.Size = new System.Drawing.Size(127, 18);
             dISCOUNT_CODELabel.TabIndex = 65;
             dISCOUNT_CODELabel.Text = "Code de Remise :";
             dISCOUNT_CODELabel.Click += new System.EventHandler(this.dISCOUNT_CODELabel_Click);
+            // 
+            // aCT_RET_DT_TIMELabel
+            // 
+            aCT_RET_DT_TIMELabel.AutoSize = true;
+            aCT_RET_DT_TIMELabel.Location = new System.Drawing.Point(23, 95);
+            aCT_RET_DT_TIMELabel.Name = "aCT_RET_DT_TIMELabel";
+            aCT_RET_DT_TIMELabel.Size = new System.Drawing.Size(156, 18);
+            aCT_RET_DT_TIMELabel.TabIndex = 65;
+            aCT_RET_DT_TIMELabel.Text = "Date de retoue actuel :";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(23, 62);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(134, 18);
+            label4.TabIndex = 67;
+            label4.Text = "ID Enregistrement :";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(6, 299);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(70, 18);
+            label5.TabIndex = 106;
+            label5.Text = "Montant :";
             // 
             // cAR_RENTALDataSet
             // 
@@ -290,17 +314,6 @@
             this.btnQUIT.UseVisualStyleBackColor = false;
             this.btnQUIT.Click += new System.EventHandler(this.btnQUIT_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(90, 617);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 34);
-            this.btnClear.TabIndex = 43;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // bOOKING_DETAILSBindingSource
             // 
             this.bOOKING_DETAILSBindingSource.DataMember = "BOOKING_DETAILS";
@@ -334,15 +347,6 @@
             this.rET_DT_TIMEDateTimePicker.Name = "rET_DT_TIMEDateTimePicker";
             this.rET_DT_TIMEDateTimePicker.Size = new System.Drawing.Size(239, 24);
             this.rET_DT_TIMEDateTimePicker.TabIndex = 48;
-            // 
-            // iNS_CODETextBox
-            // 
-            this.iNS_CODETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKING_DETAILSBindingSource, "INS_CODE", true));
-            this.iNS_CODETextBox.Location = new System.Drawing.Point(162, 261);
-            this.iNS_CODETextBox.Name = "iNS_CODETextBox";
-            this.iNS_CODETextBox.Size = new System.Drawing.Size(239, 24);
-            this.iNS_CODETextBox.TabIndex = 62;
-            this.iNS_CODETextBox.TextChanged += new System.EventHandler(this.iNS_CODETextBox_TextChanged);
             // 
             // bILLING_DETAILSBindingSource
             // 
@@ -382,7 +386,7 @@
             // 
             // Ajouterreg
             // 
-            this.Ajouterreg.Location = new System.Drawing.Point(162, 344);
+            this.Ajouterreg.Location = new System.Drawing.Point(162, 354);
             this.Ajouterreg.Name = "Ajouterreg";
             this.Ajouterreg.Size = new System.Drawing.Size(239, 41);
             this.Ajouterreg.TabIndex = 67;
@@ -519,7 +523,7 @@
             // clientCombo
             // 
             this.clientCombo.FormattingEnabled = true;
-            this.clientCombo.Location = new System.Drawing.Point(162, 231);
+            this.clientCombo.Location = new System.Drawing.Point(162, 202);
             this.clientCombo.Name = "clientCombo";
             this.clientCombo.Size = new System.Drawing.Size(239, 26);
             this.clientCombo.TabIndex = 100;
@@ -528,7 +532,7 @@
             // locationComboup
             // 
             this.locationComboup.FormattingEnabled = true;
-            this.locationComboup.Location = new System.Drawing.Point(162, 139);
+            this.locationComboup.Location = new System.Drawing.Point(162, 110);
             this.locationComboup.Name = "locationComboup";
             this.locationComboup.Size = new System.Drawing.Size(239, 26);
             this.locationComboup.TabIndex = 101;
@@ -536,23 +540,15 @@
             // locationCombodrop
             // 
             this.locationCombodrop.FormattingEnabled = true;
-            this.locationCombodrop.Location = new System.Drawing.Point(162, 170);
+            this.locationCombodrop.Location = new System.Drawing.Point(162, 141);
             this.locationCombodrop.Name = "locationCombodrop";
             this.locationCombodrop.Size = new System.Drawing.Size(239, 26);
             this.locationCombodrop.TabIndex = 102;
             // 
-            // bookStatusCombo
-            // 
-            this.bookStatusCombo.FormattingEnabled = true;
-            this.bookStatusCombo.Location = new System.Drawing.Point(162, 110);
-            this.bookStatusCombo.Name = "bookStatusCombo";
-            this.bookStatusCombo.Size = new System.Drawing.Size(239, 26);
-            this.bookStatusCombo.TabIndex = 103;
-            // 
             // DISCOUNT_DETAILScombo
             // 
             this.DISCOUNT_DETAILScombo.FormattingEnabled = true;
-            this.DISCOUNT_DETAILScombo.Location = new System.Drawing.Point(162, 291);
+            this.DISCOUNT_DETAILScombo.Location = new System.Drawing.Point(162, 262);
             this.DISCOUNT_DETAILScombo.Name = "DISCOUNT_DETAILScombo";
             this.DISCOUNT_DETAILScombo.Size = new System.Drawing.Size(239, 26);
             this.DISCOUNT_DETAILScombo.TabIndex = 104;
@@ -561,7 +557,7 @@
             // Modelcombo
             // 
             this.Modelcombo.FormattingEnabled = true;
-            this.Modelcombo.Location = new System.Drawing.Point(162, 201);
+            this.Modelcombo.Location = new System.Drawing.Point(162, 172);
             this.Modelcombo.Name = "Modelcombo";
             this.Modelcombo.Size = new System.Drawing.Size(239, 26);
             this.Modelcombo.TabIndex = 105;
@@ -570,28 +566,29 @@
             // 
             this.tabControl1.Controls.Add(this.Registre);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(255, 86);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(446, 417);
+            this.tabControl1.Size = new System.Drawing.Size(446, 450);
             this.tabControl1.TabIndex = 106;
             this.tabControl1.Tag = "hello";
             // 
             // Registre
             // 
+            this.Registre.Controls.Add(this.comboINS);
+            this.Registre.Controls.Add(label5);
+            this.Registre.Controls.Add(this.aMOUNTTextBox);
             this.Registre.Controls.Add(iNS_CODELabel);
             this.Registre.Controls.Add(this.Modelcombo);
             this.Registre.Controls.Add(dL_NUMLabel);
             this.Registre.Controls.Add(this.DISCOUNT_DETAILScombo);
-            this.Registre.Controls.Add(bOOKING_STATUSLabel);
-            this.Registre.Controls.Add(this.bookStatusCombo);
             this.Registre.Controls.Add(rEG_NUMLabel);
             this.Registre.Controls.Add(this.locationCombodrop);
             this.Registre.Controls.Add(this.rET_DT_TIMEDateTimePicker);
             this.Registre.Controls.Add(this.locationComboup);
             this.Registre.Controls.Add(pICKUP_LOCLabel);
             this.Registre.Controls.Add(this.clientCombo);
-            this.Registre.Controls.Add(this.iNS_CODETextBox);
             this.Registre.Controls.Add(dROP_LOCLabel);
             this.Registre.Controls.Add(this.fROM_DT_TIMEDateTimePicker);
             this.Registre.Controls.Add(fROM_DT_TIMELabel);
@@ -604,13 +601,30 @@
             this.Registre.Location = new System.Drawing.Point(4, 22);
             this.Registre.Name = "Registre";
             this.Registre.Padding = new System.Windows.Forms.Padding(3);
-            this.Registre.Size = new System.Drawing.Size(438, 391);
+            this.Registre.Size = new System.Drawing.Size(438, 424);
             this.Registre.TabIndex = 0;
             this.Registre.Text = "Ajouter Enregistrement";
             this.Registre.UseVisualStyleBackColor = true;
             // 
+            // comboINS
+            // 
+            this.comboINS.FormattingEnabled = true;
+            this.comboINS.Location = new System.Drawing.Point(162, 232);
+            this.comboINS.Name = "comboINS";
+            this.comboINS.Size = new System.Drawing.Size(239, 26);
+            this.comboINS.TabIndex = 108;
+            // 
+            // aMOUNTTextBox
+            // 
+            this.aMOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKING_DETAILSBindingSource, "INS_CODE", true));
+            this.aMOUNTTextBox.Location = new System.Drawing.Point(162, 299);
+            this.aMOUNTTextBox.Name = "aMOUNTTextBox";
+            this.aMOUNTTextBox.Size = new System.Drawing.Size(239, 24);
+            this.aMOUNTTextBox.TabIndex = 107;
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Completer);
             this.tabPage2.Controls.Add(this.ComboENRG);
             this.tabPage2.Controls.Add(label4);
             this.tabPage2.Controls.Add(aCT_RET_DT_TIMELabel);
@@ -619,19 +633,18 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(438, 391);
+            this.tabPage2.Size = new System.Drawing.Size(438, 424);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Completer Enregistrement";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // aCT_RET_DT_TIMELabel
+            // ComboENRG
             // 
-            aCT_RET_DT_TIMELabel.AutoSize = true;
-            aCT_RET_DT_TIMELabel.Location = new System.Drawing.Point(23, 95);
-            aCT_RET_DT_TIMELabel.Name = "aCT_RET_DT_TIMELabel";
-            aCT_RET_DT_TIMELabel.Size = new System.Drawing.Size(156, 18);
-            aCT_RET_DT_TIMELabel.TabIndex = 65;
-            aCT_RET_DT_TIMELabel.Text = "Date de retoue actuel :";
+            this.ComboENRG.FormattingEnabled = true;
+            this.ComboENRG.Location = new System.Drawing.Point(179, 59);
+            this.ComboENRG.Name = "ComboENRG";
+            this.ComboENRG.Size = new System.Drawing.Size(239, 26);
+            this.ComboENRG.TabIndex = 104;
             // 
             // aCT_RET_DT_TIMEDateTimePicker
             // 
@@ -643,22 +656,57 @@
             this.aCT_RET_DT_TIMEDateTimePicker.Size = new System.Drawing.Size(239, 24);
             this.aCT_RET_DT_TIMEDateTimePicker.TabIndex = 66;
             // 
-            // label4
+            // tabPage1
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(23, 62);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(134, 18);
-            label4.TabIndex = 67;
-            label4.Text = "ID Enregistrement :";
+            this.tabPage1.Controls.Add(this.button9);
+            this.tabPage1.Controls.Add(this.ComboIDAnnuler);
+            this.tabPage1.Controls.Add(label6);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(438, 424);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Annuler Location :";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ComboENRG
+            // ComboIDAnnuler
             // 
-            this.ComboENRG.FormattingEnabled = true;
-            this.ComboENRG.Location = new System.Drawing.Point(179, 59);
-            this.ComboENRG.Name = "ComboENRG";
-            this.ComboENRG.Size = new System.Drawing.Size(239, 26);
-            this.ComboENRG.TabIndex = 104;
+            this.ComboIDAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.ComboIDAnnuler.FormattingEnabled = true;
+            this.ComboIDAnnuler.Location = new System.Drawing.Point(179, 39);
+            this.ComboIDAnnuler.Name = "ComboIDAnnuler";
+            this.ComboIDAnnuler.Size = new System.Drawing.Size(239, 26);
+            this.ComboIDAnnuler.TabIndex = 106;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            label6.Location = new System.Drawing.Point(23, 42);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(134, 18);
+            label6.TabIndex = 105;
+            label6.Text = "ID Enregistrement :";
+            // 
+            // Completer
+            // 
+            this.Completer.Location = new System.Drawing.Point(179, 218);
+            this.Completer.Name = "Completer";
+            this.Completer.Size = new System.Drawing.Size(239, 41);
+            this.Completer.TabIndex = 107;
+            this.Completer.Text = "Completer";
+            this.Completer.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button9.Location = new System.Drawing.Point(179, 95);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(239, 41);
+            this.button9.TabIndex = 108;
+            this.button9.Text = "Annuler Location";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
@@ -682,10 +730,11 @@
             this.Controls.Add(this.NVclient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.showFact);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnQUIT);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Rental";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cAR_RENTALDataSet)).EndInit();
@@ -700,6 +749,8 @@
             this.Registre.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -718,14 +769,12 @@
         private CAR_RENTALDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private CAR_RENTALDataSetTableAdapters.ClientTableAdapter clientTableAdapter1;
         private System.Windows.Forms.Button btnQUIT;
-        private System.Windows.Forms.Button btnClear;
         private CAR_RENTALDataSetTableAdapters.BOOKING_DETAILSTableAdapter bOOKING_DETAILSTableAdapter;
         private System.Windows.Forms.BindingSource bOOKING_DETAILSBindingSource;
         private CAR_RENTALDataSetTableAdapters.BILLING_DETAILSTableAdapter bILLING_DETAILSTableAdapter;
         private System.Windows.Forms.TextBox bOOKING_IDTextBox;
         private System.Windows.Forms.DateTimePicker fROM_DT_TIMEDateTimePicker;
         private System.Windows.Forms.DateTimePicker rET_DT_TIMEDateTimePicker;
-        private System.Windows.Forms.TextBox iNS_CODETextBox;
         private System.Windows.Forms.BindingSource bILLING_DETAILSBindingSource;
         private System.Windows.Forms.TextBox showFact;
         private System.Windows.Forms.Label label1;
@@ -746,7 +795,6 @@
         private System.Windows.Forms.ComboBox clientCombo;
         private System.Windows.Forms.ComboBox locationComboup;
         private System.Windows.Forms.ComboBox locationCombodrop;
-        private System.Windows.Forms.ComboBox bookStatusCombo;
         private System.Windows.Forms.ComboBox DISCOUNT_DETAILScombo;
         private System.Windows.Forms.ComboBox Modelcombo;
         private System.Windows.Forms.TabControl tabControl1;
@@ -754,6 +802,12 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ComboBox ComboENRG;
         private System.Windows.Forms.DateTimePicker aCT_RET_DT_TIMEDateTimePicker;
+        private System.Windows.Forms.TextBox aMOUNTTextBox;
+        private System.Windows.Forms.ComboBox comboINS;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ComboBox ComboIDAnnuler;
+        private System.Windows.Forms.Button Completer;
+        private System.Windows.Forms.Button button9;
     }
 }
 

@@ -40,10 +40,14 @@ namespace Car_Rental_System
 
             fillClientCombo();
             fillLocCombo();
-            fill_BOOKINGSTATUS_Combo();
             fill_DISCOUT_Combo();
             fill_MODELVOIT_Combo();
             fill_ENRG_Combo();
+            fill_INSCODE_Combo();
+            fill_ComboIDAnnuler();
+
+
+            newConnection.Close();
         }
         public void fillClientCombo()
         {
@@ -60,6 +64,8 @@ namespace Car_Rental_System
             {
                 clientCombo.Items.Add(DT.Rows[i]["Client_ID"].ToString());
             }
+            newConnection.Close();
+
         }
         public void fillLocCombo()
         {
@@ -78,23 +84,8 @@ namespace Car_Rental_System
                 locationCombodrop.Items.Add(DT.Rows[i]["LOCATION_ID"].ToString());
 
             }
-        }
-        public void fill_BOOKINGSTATUS_Combo()
-        {
-            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
-            newConnection.Open();
-            SqlCommand scm = new SqlCommand();
-            scm.Connection = newConnection;
-            scm.CommandText = "select distinct BOOKING_STATUS from BOOKING_DETAILS";
-            SqlDataAdapter clientid = new SqlDataAdapter(scm);
-            DataTable DT = new DataTable("BOOKING_STATUS");
-            clientid.Fill(DT);
+            newConnection.Close();
 
-            for (int i = 0; i <= DT.Rows.Count - 1; i++)
-            {
-                bookStatusCombo.Items.Add(DT.Rows[i]["BOOKING_STATUS"].ToString());
-
-            }
         }
         public void fill_DISCOUT_Combo()
         {
@@ -112,6 +103,8 @@ namespace Car_Rental_System
                 DISCOUNT_DETAILScombo.Items.Add(DT.Rows[i]["DISCOUNT_CODE"].ToString());
 
             }
+            newConnection.Close();
+
         }
         public void fill_MODELVOIT_Combo()
         {
@@ -119,7 +112,7 @@ namespace Car_Rental_System
             newConnection.Open();
             SqlCommand scm = new SqlCommand();
             scm.Connection = newConnection;
-            scm.CommandText = "select distinct REGISTRATION_NUMBER from CAR";
+            scm.CommandText = "select distinct REGISTRATION_NUMBER from CAR WHERE AVAILABILITY_FLAG = 'A'";
             SqlDataAdapter clientid = new SqlDataAdapter(scm);
             DataTable DT = new DataTable("REGISTRATION_NUMBER");
             clientid.Fill(DT);
@@ -129,6 +122,8 @@ namespace Car_Rental_System
                 Modelcombo.Items.Add(DT.Rows[i]["REGISTRATION_NUMBER"].ToString());
 
             }
+            newConnection.Close();
+
         }
         public void fill_ENRG_Combo()
         {
@@ -146,6 +141,47 @@ namespace Car_Rental_System
                 ComboENRG.Items.Add(DT.Rows[i]["BOOKING_ID"].ToString());
 
             }
+            newConnection.Close();
+
+        }
+        public void fill_INSCODE_Combo()
+        {
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            newConnection.Open();
+            SqlCommand scm = new SqlCommand();
+            scm.Connection = newConnection;
+            scm.CommandText = "select distinct INSURANCE_CODE from RENTAL_CAR_INSURANCE ";
+            SqlDataAdapter clientid = new SqlDataAdapter(scm);
+            DataTable DT = new DataTable("INSURANCE_CODE");
+            clientid.Fill(DT);
+
+            for (int i = 0; i <= DT.Rows.Count - 1; i++)
+            {
+                comboINS.Items.Add(DT.Rows[i]["INSURANCE_CODE"].ToString());
+
+            }
+            newConnection.Close();
+
+        }
+        public void fill_ComboIDAnnuler()
+        {
+            
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            newConnection.Open();
+            SqlCommand scm = new SqlCommand();
+            scm.Connection = newConnection;
+            scm.CommandText = "select distinct BOOKING_ID from BOOKING_DETAILS WHERE BOOKING_STATUS = 'B'";
+            SqlDataAdapter clientid = new SqlDataAdapter(scm);
+            DataTable DT = new DataTable("BOOKING_ID");
+            clientid.Fill(DT);
+
+            for (int i = 0; i <= DT.Rows.Count - 1; i++)
+            {
+                ComboIDAnnuler.Items.Add(DT.Rows[i]["BOOKING_ID"].ToString());
+
+            }
+            newConnection.Close();
+
         }
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
@@ -164,10 +200,7 @@ namespace Car_Rental_System
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            cleartext(this);
-        }
+       
         public void cleartext(Control T)
         {
             foreach (Control C in T.Controls)
@@ -247,14 +280,13 @@ namespace Car_Rental_System
             MyRow["BOOKING_ID"] = bOOKING_IDTextBox.Text;
             MyRow["FROM_DT_TIME"] = fROM_DT_TIMEDateTimePicker.Text;
             MyRow["RET_DT_TIME"] = rET_DT_TIMEDateTimePicker.Text;
-            //MyRow["AMOUNT"] = Decimal.Parse(aMOUNTTextBox.Text);
-            MyRow["BOOKING_STATUS"] = bookStatusCombo.Text;
+            MyRow["AMOUNT"] = Decimal.Parse(aMOUNTTextBox.Text);
+            MyRow["BOOKING_STATUS"] = "B";
             MyRow["PICKUP_LOC"] = locationComboup.Text;
             MyRow["DROP_LOC"] = locationCombodrop.Text;
             MyRow["REG_NUM"] = Modelcombo.Text;
             MyRow["DL_NUM"] = clientCombo.Text;
-            MyRow["INS_CODE"] = iNS_CODETextBox.Text;
-            MyRow["ACT_RET_DT_TIME"] = aCT_RET_DT_TIMEDateTimePicker.Text;
+            MyRow["INS_CODE"] = comboINS.Text;
             MyRow["DISCOUNT_CODE"] = DISCOUNT_DETAILScombo.Text;
             ds.Tables[0].Rows.Add(MyRow);
             try
@@ -269,6 +301,9 @@ namespace Car_Rental_System
             MessageBox.Show(" Donnees Inserées ! Voir Facture");
 
             //AfficherFact(bOOKING_IDTextBox.Text);
+            ComboENRG.Items.Clear();
+            fill_ENRG_Combo();
+            fill_ComboIDAnnuler();
         }
 
         private void NVclient_Click(object sender, EventArgs e)
@@ -376,6 +411,23 @@ namespace Car_Rental_System
 
         private void dISCOUNT_CODELabel_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Connection = newConnection;
+            newConnection.Open();
+
+            cmd.CommandText = "UPDATE BOOKING_DETAILS set BOOKING_STATUS = 'C' WHERE BOOKING_ID = '" + ComboIDAnnuler.Text+ "'";
+
+            
+            cmd.ExecuteNonQuery();
+            newConnection.Close();
+            fill_ComboIDAnnuler();
 
         }
     }
