@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace Car_Rental_System
 {
     public partial class afficherregistre : Form
@@ -28,9 +28,29 @@ namespace Car_Rental_System
         private void afficherregistre_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cAR_RENTALDataSet.BOOKING_DETAILS' table. You can move, or remove it, as needed.
-            this.bOOKING_DETAILSDataGridView.AutoGenerateColumns = true;
-            this.bOOKING_DETAILSTableAdapter.Fill(this.cAR_RENTALDataSet.BOOKING_DETAILS);
-            this.bOOKING_DETAILSDataGridView.DataSource = bOOKING_DETAILSTableAdapter;
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        DataSet DS = new DataSet();
+        SqlDataAdapter adapter = new SqlDataAdapter();
+
+        
+        con.ConnectionString = "data source =.\\SQLEXPRESS ; Initial Catalog =CAR_RENTAL; Integrated Security = True; ";
+        con.Open();
+            
+    
+        
+            
+
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * FROM BOOKING_DETAILS";
+
+            adapter.SelectCommand = cmd;
+            adapter.Fill(DS, "D");
+
+            RegistreGR.AutoGenerateColumns = true;
+            RegistreGR.DataSource = DS.Tables["D"];
+
+            con.Close();
 
         }
     }

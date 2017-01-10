@@ -25,17 +25,20 @@ namespace Car_Rental_System
             this.tableAdapterManager.UpdateAll(this.cAR_RENTALDataSet);
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        public void incrementID()
         {
             SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
             newConnection.Open();
             SqlCommand scm = new SqlCommand();
             scm.Connection = newConnection;
             scm.CommandText = "select count(*) from BOOKING_DETAILS";
-            string BID = "B" + (int.Parse(scm.ExecuteScalar().ToString())+1001).ToString();
+            string BID = "B" + (int.Parse(scm.ExecuteScalar().ToString()) + 1001).ToString();
             bOOKING_IDTextBox.Text = BID;
             newConnection.Close();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            incrementID();
 
 
             fillClientCombo();
@@ -46,8 +49,6 @@ namespace Car_Rental_System
             fill_INSCODE_Combo();
             fill_ComboIDAnnuler();
 
-
-            newConnection.Close();
         }
         public void fillClientCombo()
         {
@@ -131,7 +132,7 @@ namespace Car_Rental_System
             newConnection.Open();
             SqlCommand scm = new SqlCommand();
             scm.Connection = newConnection;
-            scm.CommandText = "select distinct BOOKING_ID from BOOKING_DETAILS WHERE ACT_RET_DT_TIME IS NULL";
+            scm.CommandText = "select distinct BOOKING_ID from BOOKING_DETAILS WHERE BOOKING_STATUS = 'B'";
             SqlDataAdapter clientid = new SqlDataAdapter(scm);
             DataTable DT = new DataTable("BOOKING_ID");
             clientid.Fill(DT);
@@ -165,7 +166,9 @@ namespace Car_Rental_System
         }
         public void fill_ComboIDAnnuler()
         {
-            
+
+            ComboIDAnnuler.Items.Clear();
+
             SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
             newConnection.Open();
             SqlCommand scm = new SqlCommand();
@@ -304,6 +307,7 @@ namespace Car_Rental_System
             ComboENRG.Items.Clear();
             fill_ENRG_Combo();
             fill_ComboIDAnnuler();
+            incrementID();
         }
 
         private void NVclient_Click(object sender, EventArgs e)
@@ -420,15 +424,15 @@ namespace Car_Rental_System
             SqlCommand cmd = new SqlCommand();
 
             cmd.Connection = newConnection;
+            cmd.CommandText = "UPDATE BOOKING_DETAILS set BOOKING_STATUS = 'C' WHERE BOOKING_ID ='" + ComboIDAnnuler.Text + "'";
+
+
             newConnection.Open();
-
-            cmd.CommandText = "UPDATE BOOKING_DETAILS set BOOKING_STATUS = 'C' WHERE BOOKING_ID = '" + ComboIDAnnuler.Text+ "'";
-
-            
             cmd.ExecuteNonQuery();
             newConnection.Close();
             fill_ComboIDAnnuler();
-
+            MessageBox.Show(" Location a eté Bien Annuler !");
+            ComboIDAnnuler.Text = null;
         }
     }
 }
