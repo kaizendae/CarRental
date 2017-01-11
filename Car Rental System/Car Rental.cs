@@ -43,10 +43,11 @@ namespace Car_Rental_System
 
             fillClientCombo();
             fillLocCombo();
+            fill_INSCODE_Combo();
             fill_DISCOUT_Combo();
+
             fill_MODELVOIT_Combo();
             fill_ENRG_Combo();
-            fill_INSCODE_Combo();
             fill_ComboIDAnnuler();
 
         }
@@ -210,6 +211,9 @@ namespace Car_Rental_System
             {
                 if (C is TextBox)
                     ((TextBox)C).Clear();
+                else if(C is ComboBox)
+                    ((ComboBox)C).SelectedIndex = -1;
+              
                 else
                     cleartext(C);
             }
@@ -260,7 +264,7 @@ namespace Car_Rental_System
 
         private void fROM_DT_TIMEDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-
+            fill_Montant(); // update Montant Value in Form
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -303,10 +307,10 @@ namespace Car_Rental_System
             newConnection.Close();
             MessageBox.Show(" Donnees Inserées ! Voir Facture");
 
-            //AfficherFact(bOOKING_IDTextBox.Text);
-            ComboENRG.Items.Clear();
             fill_ENRG_Combo();
             fill_ComboIDAnnuler();
+
+            cleartext(Registre);
             incrementID();
         }
 
@@ -449,6 +453,11 @@ namespace Car_Rental_System
             newConnection.Close();
             fill_ComboIDAnnuler();
             MessageBox.Show(" Location Bien Enregistré \rFacture Generé !");
+
+
+            //afficher la facture 
+            AfficherFact(ComboENRG.Text);
+
             ComboENRG.Text = null;
         }
 
@@ -457,5 +466,41 @@ namespace Car_Rental_System
             About about = new About();
             about.Show();
         }
+
+        private void Modelcombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fill_Montant(); // update Montant Value in Form
+        }
+        public void fill_Montant()
+        {
+            if (Modelcombo.Text != "" && fROM_DT_TIMEDateTimePicker.Text != "" && rET_DT_TIMEDateTimePicker.Text != "")
+            {
+                SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+                newConnection.Open();
+                SqlCommand scm = new SqlCommand();
+                scm.Connection = newConnection;
+                scm.CommandText = "select COST_PER_DAY from CAR C , CAR_CATEG CC WHERE CC.CATEGORY_NAME = C.CAR_CATEGORY_NAME and C.REGISTRATION_NUMBER = '" + Modelcombo.Text + "' ";
+                float cost_peer_day = float.Parse(scm.ExecuteScalar().ToString());
+                float cost = 0;
+                double DAYS = (rET_DT_TIMEDateTimePicker.Value - fROM_DT_TIMEDateTimePicker.Value).TotalDays;
+                cost = float.Parse(DAYS.ToString()) * cost_peer_day;
+
+                aMOUNTTextBox.Text = cost.ToString();
+                newConnection.Close();
+            }
+        }
+
+        private void locationComboup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rET_DT_TIMEDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            fill_Montant(); // update Montant Value in Form
+
+        }
+       
     }
+
 }

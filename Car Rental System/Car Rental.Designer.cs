@@ -358,6 +358,7 @@
             this.rET_DT_TIMEDateTimePicker.Name = "rET_DT_TIMEDateTimePicker";
             this.rET_DT_TIMEDateTimePicker.Size = new System.Drawing.Size(239, 24);
             this.rET_DT_TIMEDateTimePicker.TabIndex = 48;
+            this.rET_DT_TIMEDateTimePicker.ValueChanged += new System.EventHandler(this.rET_DT_TIMEDateTimePicker_ValueChanged);
             // 
             // bILLING_DETAILSBindingSource
             // 
@@ -547,6 +548,7 @@
             this.locationComboup.Name = "locationComboup";
             this.locationComboup.Size = new System.Drawing.Size(239, 26);
             this.locationComboup.TabIndex = 101;
+            this.locationComboup.SelectedIndexChanged += new System.EventHandler(this.locationComboup_SelectedIndexChanged);
             // 
             // locationCombodrop
             // 
@@ -572,6 +574,7 @@
             this.Modelcombo.Name = "Modelcombo";
             this.Modelcombo.Size = new System.Drawing.Size(239, 26);
             this.Modelcombo.TabIndex = 105;
+            this.Modelcombo.SelectedIndexChanged += new System.EventHandler(this.Modelcombo_SelectedIndexChanged);
             // 
             // tabControl1
             // 
