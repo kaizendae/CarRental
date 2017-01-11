@@ -431,8 +431,31 @@ namespace Car_Rental_System
             cmd.ExecuteNonQuery();
             newConnection.Close();
             fill_ComboIDAnnuler();
-            MessageBox.Show(" Location a eté Bien Annuler !");
+            MessageBox.Show(" Location a eté Bien Annuler ! \r Voiture Valable a louer ");
             ComboIDAnnuler.Text = null;
+        }
+
+        private void Completer_Click(object sender, EventArgs e)
+        {
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Connection = newConnection;
+            cmd.CommandText = "UPDATE BOOKING_DETAILS set ACT_RET_DT_TIME = '"+ aCT_RET_DT_TIMEDateTimePicker.Text + "',BOOKING_STATUS = 'R' WHERE BOOKING_ID ='" + ComboENRG.Text + "'";
+
+
+            newConnection.Open();
+            cmd.ExecuteNonQuery();
+            newConnection.Close();
+            fill_ComboIDAnnuler();
+            MessageBox.Show(" Location Bien Enregistré \rFacture Generé !");
+            ComboENRG.Text = null;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
         }
     }
 }

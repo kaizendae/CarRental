@@ -41,8 +41,8 @@
             System.Windows.Forms.Label aCT_RET_DT_TIMELabel;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label label6;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.cAR_RENTALDataSet = new Car_Rental_System.CAR_RENTALDataSet();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientTableAdapter = new Car_Rental_System.CAR_RENTALDataSetTableAdapters.ClientTableAdapter();
@@ -87,12 +87,13 @@
             this.comboINS = new System.Windows.Forms.ComboBox();
             this.aMOUNTTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Completer = new System.Windows.Forms.Button();
             this.ComboENRG = new System.Windows.Forms.ComboBox();
             this.aCT_RET_DT_TIMEDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ComboIDAnnuler = new System.Windows.Forms.ComboBox();
-            this.Completer = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.ComboIDAnnuler = new System.Windows.Forms.ComboBox();
+            this.button10 = new System.Windows.Forms.Button();
             bOOKING_IDLabel = new System.Windows.Forms.Label();
             fROM_DT_TIMELabel = new System.Windows.Forms.Label();
             rET_DT_TIMELabel = new System.Windows.Forms.Label();
@@ -230,6 +231,16 @@
             label5.TabIndex = 106;
             label5.Text = "Montant :";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            label6.Location = new System.Drawing.Point(23, 42);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(134, 18);
+            label6.TabIndex = 105;
+            label6.Text = "ID Enregistrement :";
+            // 
             // cAR_RENTALDataSet
             // 
             this.cAR_RENTALDataSet.DataSetName = "CAR_RENTALDataSet";
@@ -310,7 +321,7 @@
             this.btnQUIT.Name = "btnQUIT";
             this.btnQUIT.Size = new System.Drawing.Size(75, 34);
             this.btnQUIT.TabIndex = 42;
-            this.btnQUIT.Text = "Quitter";
+            this.btnQUIT.Text = "Quit";
             this.btnQUIT.UseVisualStyleBackColor = false;
             this.btnQUIT.Click += new System.EventHandler(this.btnQUIT_Click);
             // 
@@ -638,6 +649,16 @@
             this.tabPage2.Text = "Completer Enregistrement";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Completer
+            // 
+            this.Completer.Location = new System.Drawing.Point(179, 218);
+            this.Completer.Name = "Completer";
+            this.Completer.Size = new System.Drawing.Size(239, 41);
+            this.Completer.TabIndex = 107;
+            this.Completer.Text = "Completer";
+            this.Completer.UseVisualStyleBackColor = true;
+            this.Completer.Click += new System.EventHandler(this.Completer_Click);
+            // 
             // ComboENRG
             // 
             this.ComboENRG.FormattingEnabled = true;
@@ -666,36 +687,8 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(438, 424);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Annuler Location :";
+            this.tabPage1.Text = "Annuler Location ";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // ComboIDAnnuler
-            // 
-            this.ComboIDAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ComboIDAnnuler.FormattingEnabled = true;
-            this.ComboIDAnnuler.Location = new System.Drawing.Point(179, 39);
-            this.ComboIDAnnuler.Name = "ComboIDAnnuler";
-            this.ComboIDAnnuler.Size = new System.Drawing.Size(239, 26);
-            this.ComboIDAnnuler.TabIndex = 106;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            label6.Location = new System.Drawing.Point(23, 42);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(134, 18);
-            label6.TabIndex = 105;
-            label6.Text = "ID Enregistrement :";
-            // 
-            // Completer
-            // 
-            this.Completer.Location = new System.Drawing.Point(179, 218);
-            this.Completer.Name = "Completer";
-            this.Completer.Size = new System.Drawing.Size(239, 41);
-            this.Completer.TabIndex = 107;
-            this.Completer.Text = "Completer";
-            this.Completer.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
@@ -708,13 +701,36 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // ComboIDAnnuler
+            // 
+            this.ComboIDAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.ComboIDAnnuler.FormattingEnabled = true;
+            this.ComboIDAnnuler.Location = new System.Drawing.Point(179, 39);
+            this.ComboIDAnnuler.Name = "ComboIDAnnuler";
+            this.ComboIDAnnuler.Size = new System.Drawing.Size(239, 26);
+            this.ComboIDAnnuler.TabIndex = 106;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button10.Location = new System.Drawing.Point(90, 617);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 34);
+            this.button10.TabIndex = 107;
+            this.button10.Text = "About ";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1075, 654);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label3);
@@ -734,7 +750,6 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form1";
             this.Opacity = 0.96D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -811,6 +826,7 @@
         private System.Windows.Forms.ComboBox ComboIDAnnuler;
         private System.Windows.Forms.Button Completer;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 
