@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Car_Rental_System
 {
-    public partial class afficherBOOK : Form
+    public partial class ShowBooking : Form
     {
-        public afficherBOOK()
+        public ShowBooking()
         {
             InitializeComponent();
         }
@@ -25,8 +25,10 @@ namespace Car_Rental_System
 
         }
 
-        private void afficherBOOK_Load(object sender, EventArgs e)
+        private void ShowBooking_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cAR_RENTALDataSet.BOOKING_DETAILS' table. You can move, or remove it, as needed.
+            this.bOOKING_DETAILSTableAdapter.Fill(this.cAR_RENTALDataSet.BOOKING_DETAILS);
 
         }
     }

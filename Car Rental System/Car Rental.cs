@@ -129,6 +129,7 @@ namespace Car_Rental_System
         }
         public void fill_ENRG_Combo()
         {
+            ComboENRG.Items.Clear();
             SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
             newConnection.Open();
             SqlCommand scm = new SqlCommand();
@@ -254,8 +255,7 @@ namespace Car_Rental_System
         } 
         private void button2_Click(object sender, EventArgs e)
         {
-            afficherregistre showreg = new afficherregistre();
-            showreg.Show();
+            
         }
         
 
@@ -357,7 +357,7 @@ namespace Car_Rental_System
 
         private void button6_Click(object sender, EventArgs e)
         {
-            afficherBOOK showbook = new afficherBOOK();
+            ShowBooking showbook = new ShowBooking();
             showbook.Show();
         }
 

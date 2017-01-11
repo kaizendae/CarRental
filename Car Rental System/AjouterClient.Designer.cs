@@ -71,6 +71,114 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // client_IDLabel
+            // 
+            client_IDLabel.AutoSize = true;
+            client_IDLabel.Location = new System.Drawing.Point(207, 12);
+            client_IDLabel.Name = "client_IDLabel";
+            client_IDLabel.Size = new System.Drawing.Size(50, 13);
+            client_IDLabel.TabIndex = 28;
+            client_IDLabel.Text = "Client ID:";
+            // 
+            // mEMBERSHIP_IDLabel
+            // 
+            mEMBERSHIP_IDLabel.AutoSize = true;
+            mEMBERSHIP_IDLabel.Location = new System.Drawing.Point(207, 298);
+            mEMBERSHIP_IDLabel.Name = "mEMBERSHIP_IDLabel";
+            mEMBERSHIP_IDLabel.Size = new System.Drawing.Size(96, 13);
+            mEMBERSHIP_IDLabel.TabIndex = 50;
+            mEMBERSHIP_IDLabel.Text = "MEMBERSHIP ID:";
+            // 
+            // mEMBERSHIP_TYPELabel
+            // 
+            mEMBERSHIP_TYPELabel.AutoSize = true;
+            mEMBERSHIP_TYPELabel.Location = new System.Drawing.Point(207, 272);
+            mEMBERSHIP_TYPELabel.Name = "mEMBERSHIP_TYPELabel";
+            mEMBERSHIP_TYPELabel.Size = new System.Drawing.Size(113, 13);
+            mEMBERSHIP_TYPELabel.TabIndex = 48;
+            mEMBERSHIP_TYPELabel.Text = "MEMBERSHIP TYPE:";
+            // 
+            // zIPCODELabel
+            // 
+            zIPCODELabel.AutoSize = true;
+            zIPCODELabel.Location = new System.Drawing.Point(207, 246);
+            zIPCODELabel.Name = "zIPCODELabel";
+            zIPCODELabel.Size = new System.Drawing.Size(57, 13);
+            zIPCODELabel.TabIndex = 46;
+            zIPCODELabel.Text = "ZIPCODE:";
+            // 
+            // fNAMELabel
+            // 
+            fNAMELabel.AutoSize = true;
+            fNAMELabel.Location = new System.Drawing.Point(207, 38);
+            fNAMELabel.Name = "fNAMELabel";
+            fNAMELabel.Size = new System.Drawing.Size(47, 13);
+            fNAMELabel.TabIndex = 30;
+            fNAMELabel.Text = "FNAME:";
+            // 
+            // sTATE_NAMELabel
+            // 
+            sTATE_NAMELabel.AutoSize = true;
+            sTATE_NAMELabel.Location = new System.Drawing.Point(207, 220);
+            sTATE_NAMELabel.Name = "sTATE_NAMELabel";
+            sTATE_NAMELabel.Size = new System.Drawing.Size(79, 13);
+            sTATE_NAMELabel.TabIndex = 44;
+            sTATE_NAMELabel.Text = "STATE NAME:";
+            // 
+            // mNAMELabel
+            // 
+            mNAMELabel.AutoSize = true;
+            mNAMELabel.Location = new System.Drawing.Point(207, 64);
+            mNAMELabel.Name = "mNAMELabel";
+            mNAMELabel.Size = new System.Drawing.Size(50, 13);
+            mNAMELabel.TabIndex = 32;
+            mNAMELabel.Text = "MNAME:";
+            // 
+            // cITYLabel
+            // 
+            cITYLabel.AutoSize = true;
+            cITYLabel.Location = new System.Drawing.Point(207, 194);
+            cITYLabel.Name = "cITYLabel";
+            cITYLabel.Size = new System.Drawing.Size(34, 13);
+            cITYLabel.TabIndex = 42;
+            cITYLabel.Text = "CITY:";
+            // 
+            // lNAMELabel
+            // 
+            lNAMELabel.AutoSize = true;
+            lNAMELabel.Location = new System.Drawing.Point(207, 90);
+            lNAMELabel.Name = "lNAMELabel";
+            lNAMELabel.Size = new System.Drawing.Size(47, 13);
+            lNAMELabel.TabIndex = 34;
+            lNAMELabel.Text = "LNAME:";
+            // 
+            // sTREETLabel
+            // 
+            sTREETLabel.AutoSize = true;
+            sTREETLabel.Location = new System.Drawing.Point(207, 168);
+            sTREETLabel.Name = "sTREETLabel";
+            sTREETLabel.Size = new System.Drawing.Size(53, 13);
+            sTREETLabel.TabIndex = 40;
+            sTREETLabel.Text = "STREET:";
+            // 
+            // pHONE_NUMBERLabel
+            // 
+            pHONE_NUMBERLabel.AutoSize = true;
+            pHONE_NUMBERLabel.Location = new System.Drawing.Point(207, 116);
+            pHONE_NUMBERLabel.Name = "pHONE_NUMBERLabel";
+            pHONE_NUMBERLabel.Size = new System.Drawing.Size(98, 13);
+            pHONE_NUMBERLabel.TabIndex = 36;
+            pHONE_NUMBERLabel.Text = "PHONE NUMBER:";
+            // 
+            // eMAIL_IDLabel
+            // 
+            eMAIL_IDLabel.AutoSize = true;
+            eMAIL_IDLabel.Location = new System.Drawing.Point(207, 142);
+            eMAIL_IDLabel.Name = "eMAIL_IDLabel";
+            eMAIL_IDLabel.Size = new System.Drawing.Size(56, 13);
+            eMAIL_IDLabel.TabIndex = 38;
+            eMAIL_IDLabel.Text = "EMAIL ID:";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(202, 325);
@@ -91,15 +199,6 @@
             this.btnCLIENTadd.UseVisualStyleBackColor = true;
             this.btnCLIENTadd.Click += new System.EventHandler(this.btnCLIENTadd_Click);
             // 
-            // client_IDLabel
-            // 
-            client_IDLabel.AutoSize = true;
-            client_IDLabel.Location = new System.Drawing.Point(207, 12);
-            client_IDLabel.Name = "client_IDLabel";
-            client_IDLabel.Size = new System.Drawing.Size(50, 13);
-            client_IDLabel.TabIndex = 28;
-            client_IDLabel.Text = "Client ID:";
-            // 
             // mEMBERSHIP_IDTextBox
             // 
             this.mEMBERSHIP_IDTextBox.Location = new System.Drawing.Point(365, 298);
@@ -107,30 +206,12 @@
             this.mEMBERSHIP_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.mEMBERSHIP_IDTextBox.TabIndex = 51;
             // 
-            // mEMBERSHIP_IDLabel
-            // 
-            mEMBERSHIP_IDLabel.AutoSize = true;
-            mEMBERSHIP_IDLabel.Location = new System.Drawing.Point(207, 298);
-            mEMBERSHIP_IDLabel.Name = "mEMBERSHIP_IDLabel";
-            mEMBERSHIP_IDLabel.Size = new System.Drawing.Size(96, 13);
-            mEMBERSHIP_IDLabel.TabIndex = 50;
-            mEMBERSHIP_IDLabel.Text = "MEMBERSHIP ID:";
-            // 
             // mEMBERSHIP_TYPETextBox
             // 
             this.mEMBERSHIP_TYPETextBox.Location = new System.Drawing.Point(365, 272);
             this.mEMBERSHIP_TYPETextBox.Name = "mEMBERSHIP_TYPETextBox";
             this.mEMBERSHIP_TYPETextBox.Size = new System.Drawing.Size(100, 20);
             this.mEMBERSHIP_TYPETextBox.TabIndex = 49;
-            // 
-            // mEMBERSHIP_TYPELabel
-            // 
-            mEMBERSHIP_TYPELabel.AutoSize = true;
-            mEMBERSHIP_TYPELabel.Location = new System.Drawing.Point(207, 272);
-            mEMBERSHIP_TYPELabel.Name = "mEMBERSHIP_TYPELabel";
-            mEMBERSHIP_TYPELabel.Size = new System.Drawing.Size(113, 13);
-            mEMBERSHIP_TYPELabel.TabIndex = 48;
-            mEMBERSHIP_TYPELabel.Text = "MEMBERSHIP TYPE:";
             // 
             // zIPCODETextBox
             // 
@@ -146,24 +227,6 @@
             this.client_IDTextBox.Size = new System.Drawing.Size(100, 20);
             this.client_IDTextBox.TabIndex = 29;
             // 
-            // zIPCODELabel
-            // 
-            zIPCODELabel.AutoSize = true;
-            zIPCODELabel.Location = new System.Drawing.Point(207, 246);
-            zIPCODELabel.Name = "zIPCODELabel";
-            zIPCODELabel.Size = new System.Drawing.Size(57, 13);
-            zIPCODELabel.TabIndex = 46;
-            zIPCODELabel.Text = "ZIPCODE:";
-            // 
-            // fNAMELabel
-            // 
-            fNAMELabel.AutoSize = true;
-            fNAMELabel.Location = new System.Drawing.Point(207, 38);
-            fNAMELabel.Name = "fNAMELabel";
-            fNAMELabel.Size = new System.Drawing.Size(47, 13);
-            fNAMELabel.TabIndex = 30;
-            fNAMELabel.Text = "FNAME:";
-            // 
             // sTATE_NAMETextBox
             // 
             this.sTATE_NAMETextBox.Location = new System.Drawing.Point(365, 220);
@@ -177,24 +240,6 @@
             this.fNAMETextBox.Name = "fNAMETextBox";
             this.fNAMETextBox.Size = new System.Drawing.Size(100, 20);
             this.fNAMETextBox.TabIndex = 31;
-            // 
-            // sTATE_NAMELabel
-            // 
-            sTATE_NAMELabel.AutoSize = true;
-            sTATE_NAMELabel.Location = new System.Drawing.Point(207, 220);
-            sTATE_NAMELabel.Name = "sTATE_NAMELabel";
-            sTATE_NAMELabel.Size = new System.Drawing.Size(79, 13);
-            sTATE_NAMELabel.TabIndex = 44;
-            sTATE_NAMELabel.Text = "STATE NAME:";
-            // 
-            // mNAMELabel
-            // 
-            mNAMELabel.AutoSize = true;
-            mNAMELabel.Location = new System.Drawing.Point(207, 64);
-            mNAMELabel.Name = "mNAMELabel";
-            mNAMELabel.Size = new System.Drawing.Size(50, 13);
-            mNAMELabel.TabIndex = 32;
-            mNAMELabel.Text = "MNAME:";
             // 
             // cITYTextBox
             // 
@@ -210,24 +255,6 @@
             this.mNAMETextBox.Size = new System.Drawing.Size(100, 20);
             this.mNAMETextBox.TabIndex = 33;
             // 
-            // cITYLabel
-            // 
-            cITYLabel.AutoSize = true;
-            cITYLabel.Location = new System.Drawing.Point(207, 194);
-            cITYLabel.Name = "cITYLabel";
-            cITYLabel.Size = new System.Drawing.Size(34, 13);
-            cITYLabel.TabIndex = 42;
-            cITYLabel.Text = "CITY:";
-            // 
-            // lNAMELabel
-            // 
-            lNAMELabel.AutoSize = true;
-            lNAMELabel.Location = new System.Drawing.Point(207, 90);
-            lNAMELabel.Name = "lNAMELabel";
-            lNAMELabel.Size = new System.Drawing.Size(47, 13);
-            lNAMELabel.TabIndex = 34;
-            lNAMELabel.Text = "LNAME:";
-            // 
             // sTREETTextBox
             // 
             this.sTREETTextBox.Location = new System.Drawing.Point(365, 168);
@@ -242,24 +269,6 @@
             this.lNAMETextBox.Size = new System.Drawing.Size(100, 20);
             this.lNAMETextBox.TabIndex = 35;
             // 
-            // sTREETLabel
-            // 
-            sTREETLabel.AutoSize = true;
-            sTREETLabel.Location = new System.Drawing.Point(207, 168);
-            sTREETLabel.Name = "sTREETLabel";
-            sTREETLabel.Size = new System.Drawing.Size(53, 13);
-            sTREETLabel.TabIndex = 40;
-            sTREETLabel.Text = "STREET:";
-            // 
-            // pHONE_NUMBERLabel
-            // 
-            pHONE_NUMBERLabel.AutoSize = true;
-            pHONE_NUMBERLabel.Location = new System.Drawing.Point(207, 116);
-            pHONE_NUMBERLabel.Name = "pHONE_NUMBERLabel";
-            pHONE_NUMBERLabel.Size = new System.Drawing.Size(98, 13);
-            pHONE_NUMBERLabel.TabIndex = 36;
-            pHONE_NUMBERLabel.Text = "PHONE NUMBER:";
-            // 
             // eMAIL_IDTextBox
             // 
             this.eMAIL_IDTextBox.Location = new System.Drawing.Point(365, 142);
@@ -273,15 +282,6 @@
             this.pHONE_NUMBERTextBox.Name = "pHONE_NUMBERTextBox";
             this.pHONE_NUMBERTextBox.Size = new System.Drawing.Size(100, 20);
             this.pHONE_NUMBERTextBox.TabIndex = 37;
-            // 
-            // eMAIL_IDLabel
-            // 
-            eMAIL_IDLabel.AutoSize = true;
-            eMAIL_IDLabel.Location = new System.Drawing.Point(207, 142);
-            eMAIL_IDLabel.Name = "eMAIL_IDLabel";
-            eMAIL_IDLabel.Size = new System.Drawing.Size(56, 13);
-            eMAIL_IDLabel.TabIndex = 38;
-            eMAIL_IDLabel.Text = "EMAIL ID:";
             // 
             // pictureBox1
             // 
@@ -326,6 +326,7 @@
             this.Controls.Add(this.eMAIL_IDTextBox);
             this.Controls.Add(this.pHONE_NUMBERTextBox);
             this.Controls.Add(eMAIL_IDLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AjouterClient";
             this.Text = "AjouterClient";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
