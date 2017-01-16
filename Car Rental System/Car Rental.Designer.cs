@@ -73,7 +73,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.IDbooktxt = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -94,6 +93,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.ComboIDAnnuler = new System.Windows.Forms.ComboBox();
             this.button10 = new System.Windows.Forms.Button();
+            this.combofact = new System.Windows.Forms.ComboBox();
             bOOKING_IDLabel = new System.Windows.Forms.Label();
             fROM_DT_TIMELabel = new System.Windows.Forms.Label();
             rET_DT_TIMELabel = new System.Windows.Forms.Label();
@@ -494,14 +494,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // IDbooktxt
-            // 
-            this.IDbooktxt.Location = new System.Drawing.Point(800, 286);
-            this.IDbooktxt.Name = "IDbooktxt";
-            this.IDbooktxt.Size = new System.Drawing.Size(131, 20);
-            this.IDbooktxt.TabIndex = 96;
-            this.IDbooktxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(937, 284);
@@ -726,6 +718,14 @@
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // combofact
+            // 
+            this.combofact.FormattingEnabled = true;
+            this.combofact.Location = new System.Drawing.Point(801, 286);
+            this.combofact.Name = "combofact";
+            this.combofact.Size = new System.Drawing.Size(130, 21);
+            this.combofact.TabIndex = 108;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,12 +733,12 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1075, 654);
+            this.Controls.Add(this.combofact);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.IDbooktxt);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -809,7 +809,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox IDbooktxt;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button8;
@@ -830,6 +829,7 @@
         private System.Windows.Forms.Button Completer;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ComboBox combofact;
     }
 }
 

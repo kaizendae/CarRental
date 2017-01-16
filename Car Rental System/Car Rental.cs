@@ -36,6 +36,7 @@ namespace Car_Rental_System
             bOOKING_IDTextBox.Text = BID;
             newConnection.Close();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             incrementID();
@@ -49,7 +50,25 @@ namespace Car_Rental_System
             fill_MODELVOIT_Combo();
             fill_ENRG_Combo();
             fill_ComboIDAnnuler();
+            fill_combofact();
 
+        }
+        public void fill_combofact()
+        {
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            newConnection.Open();
+            SqlCommand scm = new SqlCommand();
+            scm.Connection = newConnection;
+            scm.CommandText = "select BOOKING_ID  from BILLING_DETAILS";
+            SqlDataAdapter clientid = new SqlDataAdapter(scm);
+            DataTable DT = new DataTable("BOOKING_ID");
+            clientid.Fill(DT);
+
+            for (int i = 0; i <= DT.Rows.Count - 1; i++)
+            {
+                combofact.Items.Add(DT.Rows[i]["BOOKING_ID"].ToString());
+            }
+            newConnection.Close();
         }
         public void fillClientCombo()
         {
@@ -363,7 +382,7 @@ namespace Car_Rental_System
 
         private void button7_Click(object sender, EventArgs e)
         {
-            AfficherFact(IDbooktxt.Text);
+            AfficherFact(combofact.Text);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -437,6 +456,7 @@ namespace Car_Rental_System
             fill_ComboIDAnnuler();
             MessageBox.Show(" Location a eté Bien Annuler ! \r Voiture Valable a louer ");
             ComboIDAnnuler.Text = null;
+            fill_ENRG_Combo();
         }
 
         private void Completer_Click(object sender, EventArgs e)
@@ -456,8 +476,10 @@ namespace Car_Rental_System
 
 
             //afficher la facture 
-            AfficherFact(ComboENRG.Text);
+            AfficherFact(combofact.Text);
+            fill_combofact();
 
+            
             ComboENRG.Text = null;
         }
 
@@ -500,7 +522,6 @@ namespace Car_Rental_System
             fill_Montant(); // update Montant Value in Form
 
         }
-       
     }
 
 }

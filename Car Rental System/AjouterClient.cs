@@ -58,12 +58,45 @@ namespace Car_Rental_System
             ad.Update(ds);
             newConnection.Close();
             MessageBox.Show(" Nouveau Client Ajoutée ! ");
-        }
+            cleartext(this);
+            IDC();
 
+        }
+        public void cleartext(Control T)
+        {
+            foreach (Control C in T.Controls)
+            {
+                if (C is TextBox)
+                    ((TextBox)C).Clear();
+                else if (C is ComboBox)
+                    ((ComboBox)C).SelectedIndex = -1;
+
+                else
+                    cleartext(C);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             afficherclients showclients = new afficherclients();
             showclients.Show();
+        }
+
+        private void AjouterClient_Load(object sender, EventArgs e)
+        {
+            
+        IDC();
+
+
+        }
+        public void IDC() {
+            SqlConnection newConnection = new SqlConnection("data source =.\\SQLEXPRESS ; Initial Catalog = CAR_RENTAL; Integrated Security = True; ");
+            newConnection.Open();
+            SqlCommand scm = new SqlCommand();
+            scm.Connection = newConnection;
+            scm.CommandText = "select count(*) from Client";
+            string BID = (int.Parse(scm.ExecuteScalar().ToString()) + 1).ToString();
+            client_IDTextBox.Text = BID;
+            newConnection.Close();
         }
     }
 }
