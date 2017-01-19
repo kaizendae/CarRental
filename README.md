@@ -7,4 +7,5 @@
 
 
 Free To Use :D ! 
-Thanks :v
+<br>Thanks :v
+<br>Star it
